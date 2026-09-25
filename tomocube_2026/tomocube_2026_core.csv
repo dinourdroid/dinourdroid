@@ -1,0 +1,35 @@
+﻿"논문ID","발행연도","저널명/DOI","① [대분류] 연구분야","② [타깃] 관찰 시료·물질","③ [기전] 관찰 현상·메커니즘","④ [장비가치] 측정 니즈","⑤ [관계장비] 병행/대체 광학 장비","⑥ [산출물] 데이터 최종 산출물","⑦ 자사(Tomocube) AI/SW 활용","⑧ 타사 AI/SW 활용"
+"paper_01","2024","Journal of Biomedical Optics / 10.1117/1.JBO.29.S2.S22706","바이오이미징/광학기술","대식세포(단핵구 세포주 유래, 고정)","대식세포 분극(M1/M2); 세포 건조질량·부피 특성","#단일세포 #건조질량 #광학부피 #라벨프리 #저광독성 #동시측정","명시 안 됨","Tomocube HT-1H [수치]: 세포별 건조질량, 부피, 분할 정확도·IoU·Dice·Hausdorff, 분할 연산시간
+Tomocube HT-1H [영상]: 3D RI 스택, 2D MIP
+기타: 명시 안 됨","SW 모듈명 명시 O: TomoStudio (버전 명시 X)
+3D RI 재구성·시각화, 2D MIP 생성. 제조사 분할(워터쉐드·AI)은 비교 기준","CellProfiler → MIP 2D 세포 분할 [ML]
+MATLAB → CellSNAP 3D 분할·건조질량·부피 계산
+Cellpose → 비교 벤치마크 [ML]
+※ 유출: QPI 3D 세포 분할·정량은 CellProfiler + MATLAB(CellSNAP)"
+"paper_02","2024","Biomedical Optics Express / 10.1364/BOE.512149","바이오이미징/광학기술","인간 배아신장(HEK) 세포(생세포)","세포 광산란(각도분해 산란); 세포소기관 크기 분포; 세포질 굴절률 이질성","#단일소기관 #단일세포 #형태측정 #라벨프리 #동시측정 #굴절률정량","[병행] 굴절계(모델 명시 안 됨) → 배지 RI 측정
+[대체] 명시 안 됨","Tomocube HT-2 [수치]: 세포질·소기관 RI, 소기관 등가직경 분포, 모델별 각도산란 차이(%)
+Tomocube HT-2 [영상]: 3D RI 토모그램, MIP, 각도산란 곡선(Wolf·FTLS)
+기타: 배지 RI(굴절계)","SW 모듈명 명시 X (‘Tomocube software’)
+3D RI 재구성, 원시 인터페로그램 제공(맞춤 스크립트)","MATLAB → 소기관 경계 검출(imgradient)
+※ 유출: QPI 소기관 분할·크기·RI 정량과 산란 계산은 자체 코드(MATLAB 등)"
+"paper_03","2023","Nature Cell Biology / 10.1038/s41556-022-01039-y","면역학","정제 재조합 단백질 액적(무세포, in vitro)","액체-액체 상분리; 아밀로이드 유사 섬유화; 괴사성 세포사멸(necroptosis); 항바이러스 선천면역","#단일소기관 #연속관찰 #형태측정 #건조질량 #광학부피 #질량밀도 #라벨프리 #동시측정 #형광결합 #굴절률정량","[병행] Zeiss LSM880 Airyscan → 생세포 FRAP
+[병행] 공초점 현미경(모델 명시 안 됨) → 면역형광·ThT
+[병행] Keyence BZ-X710 → 상분리 형광영상·PLA·IHC
+[병행] FEI Tecnai F20 TEM → 섬유 구조·전자단층
+[대체] 명시 안 됨","Tomocube HT-2 [수치]: 액적 부피·표면적·질량·농도·평균 RI·구형도, RIPK3 핵형성 시간경과
+Tomocube HT-2 [영상]: 3D RI 토모그램 + 3D 형광
+기타: 질량분석, 웨스턴블롯, 세포사 동역학, LDH·ATP, 바이러스 역가, PLA, FRAP, TEM, ELISA, IHC, 생존곡선","SW 모듈명 명시 O: TomoStudio (버전 명시 X)
+RI 토모그램에서 액적 형태·생화학 파라미터 정량","ImageJ(Fiji) → PLA·IHC 면적 정량, FRAP 영상 처리
+GraphPad Prism v9.1 → 통계, FRAP 피팅
+IMOD → 전자단층 재구성
+PONDR → 단백질 무질서 영역 예측"
+"paper_04","2023","iScience / 10.1016/j.isci.2023.106854","생체모방공학/합성생물학","인간 배아신장 세포(HEK 293; reflectin 발현·비발현, 생세포)","반사단백질(reflectin) 자기조립·응집; 세포 광산란·투명도 조절; 염 자극 반응","#단일소기관 #단일세포 #연속관찰 #개별세포추적 #형태측정 #동시측정 #굴절률정량","[병행] Thermo EVOS M5000 → 위상차·형광 생세포 영상
+[병행] Zeiss LSM 780 → 면역형광 공초점
+[병행] BioTek Cytation 5 → 스크래치 어세이 명시야
+[대체] 명시 안 됨","Tomocube HT-2 [수치]: 세포당 구조체 수, 최고 RI, 직경 분포(염 자극 전후)
+Tomocube HT-2 [영상]: 위상 영상, 3D RI 맵, 1시간 시계열·동영상
+기타: 세포 생존율, 면역형광 영상, 스크래치 어세이 이동 추적, 위상차·형광 타임랩스","SW 모듈명 명시 O: TomoStudio (v2.7.43); Tomocube Lipid Analysis (v1.2.1)
+RI 추출; 구조체 수·크기 추출(지질 분석 모듈을 단백질 구조체에 적용)","ImageJ v1.53 → 위상차·형광·명시야 영상 처리
+ZEN Black v2.3 / ZEN Blue v3.2 → 공초점 취득·분석
+Gen5 → 명시야 영상 취득
+ATUM Gene Designer → 벡터 설계"

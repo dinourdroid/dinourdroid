@@ -1,0 +1,52 @@
+﻿"논문ID","발행연도","저널명/DOI","① [대분류] 연구분야","② [타깃] 관찰 시료·물질","③ [기전] 관찰 현상·메커니즘","④ [장비가치] 측정 니즈","⑤ [관계장비] 병행/대체 광학 장비","⑥ [산출물] 데이터 최종 산출물","⑦ 자사(Tomocube) AI/SW 활용","⑧ 타사 AI/SW 활용"
+"paper_01","2024 (온라인 2024-04-18)","Journal of Biomedical Optics / 10.1117/1.JBO.29.S2.S22706 / 29(S2), S22706
+프리프린트 bioRxiv 10.1101/2023.07.24.550376 존재(첨부본은 정식 게재판 형식)","바이오이미징/광학기술 (3D QPI 영상의 고속 규칙 기반 세포 분할 알고리즘 CellSNAP 개발)","U937 유래 M1 대식세포(PMA 분화 후 LPS+IFN-γ); U937 유래 M2 대식세포(PMA 분화 후 IL-4+IL-13); 4% PFA 고정, TomoDish, 컨플루언시 약 65%
+제외(QPI 미관찰): 해당 없음(모든 시료를 HT-1H로 관찰)","대식세포 분극(M1/M2); 세포 건조질량·부피 특성
+핵심 발견: CellSNAP은 세포당 약 2초(단일코어)로 3D 분할하며, 제조사 워터쉐드 대비 건조질량 차이 약 5%, 부피 차이 6~8%. 뭉친 세포·인터페로그램 드리프트 영상에서도 분할 가능. 한계: z축 다중세포(스페로이드·오가노이드), 고밀도 군집, 수분 흡수로 건조성분이 불연속인 세포","#단일세포 #건조질량 #광학부피 #라벨프리 #저광독성 #동시측정
+세포별 건조질량·부피를 한 번의 3D RI 취득으로 산출(‘label-free volume and dry mass measurements are unique to QPI images’). 광독성·광표백 언급은 QPI 일반론이며, 본 연구 시료는 고정세포라 장시간 촬영은 수행하지 않음(‘without limitations of photobleaching and phototoxicity’)","명시 안 됨 (QPI는 Tomocube HT-1H 단독: 60× 수침 1.2 NA, 532 nm, DMD 스캐닝)
+[대체] 명시 안 됨","Tomocube HT-1H [수치]: 세포별 건조질량(pg; α=0.19 µm³/pg), 부피(3D 마스크 복셀 수), 워터쉐드 대비 차이(건조질량 약 5%, 부피 M1 8%·M2 6%), 수동 분할 대비 정확도(대부분 세포 >90%; M1·M2 각 10개 세포, 약 2,080 슬라이스), IoU·Dice·최대 Hausdorff(보충자료), 연산시간(CellSNAP 2 s/세포, 워터쉐드 10 s, AI 6 s, Cellpose 350 s)
+Tomocube HT-1H [영상]: 3D RI 스택(484×484×208), 2D MIP, 슬라이스별 분할 정확도 동영상(Video 1)
+기타: 명시 안 됨","SW 모듈명 명시 O — ‘TomoStudio (Tomocube Inc., Republic of Korea) was used to reconstruct and visualize 3D RI maps and their 2D MIP’
+3D RI 재구성·시각화, 2D MIP·tiff 스택 내보내기. 제조사 SW의 Otsu 기반 3D 워터쉐드와 AI 분할 도구(대식세포 등 일부 세포종만 지원, 모듈명 미기재)는 비교 기준(gold standard)으로만 사용. 최종 분할·정량은 타사 SW(CellProfiler + MATLAB)로 수행","CellProfiler → MIP 영상 2D 세포 분할·마스크 생성(CellSNAP 3단계) [ML]
+MATLAB → bwlabel·bwlabeln 기반 2D·3D 연결성 노이즈 제거, 건조질량·부피 계산(CellSNAP 구현, 코드 공개)
+Cellpose → 수동 분할 대비 정확도 비교(기본 가중치, 재학습 없음) [ML]
+※ 유출: QPI 3D 세포 분할과 건조질량·부피 정량 전 과정이 타사 SW(CellProfiler + MATLAB 자체 코드). 자사 SW는 재구성·MIP 내보내기와 비교 기준 역할에 그침"
+"paper_02","2024 (온라인 2024-01-24)","Biomedical Optics Express / 10.1364/BOE.512149 / 15(2), 973–990
+프리프린트 Optica Open 존재(프리프린트 DOI 미확인). 첨부본은 정식 게재판(© 2024 Optica)","바이오이미징/광학기술 (ODT 토모그램으로 단일세포 각도분해 광산란 모델 가정의 타당성 검증)","인간 배아신장(HEK) 세포(MIT Koch Institute High Throughput Sciences Core 제공), 0.1% 폴리-L-라이신 코팅 TomoDish, DMEM 배지, 생세포; 28개 세포 측정 중 17개 분석
+제외(QPI 미관찰): 해당 없음","세포 광산란(각도분해 산란); 세포소기관 크기 분포; 세포질 굴절률 이질성
+핵심 발견: 배지 RI 매칭(전체 세포 산란 제거)이 산란 형태에 가장 큰 영향(약 150%). 다음이 세포질 이질성. 구형 가정과 동일 RI 가정의 영향은 작음. HEK 세포의 산란체는 주로 1 µm 미만","#단일소기관 #단일세포 #형태측정 #라벨프리 #동시측정 #굴절률정량
+단일세포 3D RI 맵에서 소기관 138개를 분할해 등가직경·RI를 산출하고, 같은 취득의 정상입사 인터페로그램으로 FTLS 산란을 함께 계산. 기존 기술 한계로 SEM을 언급(‘requires cell fixation and long acquisition times’)","[병행] 굴절계(제조사·모델 명시 안 됨) → DMEM 배지 RI 1.337 측정
+[대체] 명시 안 됨 (SEM은 단일세포 소기관 크기 측정의 대안으로 언급만 함)","Tomocube HT-2 [수치]: 세포질 평균 RI 1.364±0.004 (n=28), Otsu 임계값 1.350±0.002, 소기관 분할 임계 1.385, 소기관 RI·등가직경 히스토그램(138개, 대부분 <1 µm, RI 피크 <1.39), 소기관 단면 단축/장축비 중앙값 0.85, 모델 간 각도산란 %차이(17개 세포; RI 매칭 약 150%)
+Tomocube HT-2 [영상]: 3D RI 토모그램(측방 95 nm·축방 190 nm), 5가지 세포 모델 MIP, Wolf 변환·FTLS 각도산란 곡선(0–40°)
+기타: 배지 RI 1.337(굴절계). 본문 Table 1–6의 수치 일부는 첨부본에서 누락(‘View Table’)","SW 모듈명 명시 X — ‘the Tomocube software reconstructs a 3D array of the sample’s refractive index’
+비음수 제약 반복 재구성으로 3D RI 산출. Tomocube가 원시 인터페로그램 접근용 맞춤 스크립트를 제공. 디지털 RI 매칭·소기관 분할·산란 계산은 타사 SW·자체 코드로 수행","MATLAB → 소기관 경계 검출(‘imgradient’, Sobel 연산자)
+※ 유출: Otsu 임계·워터쉐드 소기관 분할·등가구 생성·3D FFT Wolf 변환·FTLS 등 QPI 후처리 전 과정이 자체 코드(명시된 도구는 MATLAB뿐). 자사 SW는 재구성과 원시데이터 제공까지 관여"
+"paper_03","2023 (온라인 2023-01-05)","Nature Cell Biology / 10.1038/s41556-022-01039-y / 25(1), 92–107","면역학 (IFN 유도 단백질 OASL의 상분리가 RIPK3–ZBP1 네크로좀을 형성해 바이러스 유도 네크롭토시스를 촉진하는 기전)","정제 재조합 OASL–GFP 액적(in vitro, 상분리 유도 전후); OASL–GFP + RIPK3(295–518)–mCherry 공응축체; RIPK3–mCherry + ZBP1(± OASL) 혼합물
+제외(QPI 미관찰): 마우스 1차 꼬리 섬유아세포(공초점·LSM880 FRAP·Keyence·PLA로만 관찰), HEK 293T·A549·효모(생화학 분석), 마우스 족부·폐·침샘 조직(IHC·H&E·역가로만)","액체-액체 상분리; 아밀로이드 유사 섬유화; 괴사성 세포사멸(necroptosis); 항바이러스 선천면역
+핵심 발견: OASL은 dsRNA 의존적으로 액체-액체 상분리를 일으키고, RIPK3·ZBP1을 액적으로 모아 RIPK3의 핵형성·아밀로이드 섬유화·자가인산화를 유도해 MLKL 인산화와 네크롭토시스를 일으킴. Oasl1 결손 마우스는 MCMV·HSV-1·IAV 감염 시 염증이 줄고 바이러스가 확산되며 치사율이 높아짐","#단일소기관 #연속관찰 #형태측정 #건조질량 #광학부피 #질량밀도 #라벨프리 #동시측정 #형광결합 #굴절률정량
+개별 응축체(n=7/조건)의 부피·표면적·질량·농도·RI·구형도를 3D RI와 형광으로 함께 정량(‘in a label-free and noninvasive manner’). 시간경과 핵형성 정량(Fig. 5e). #단일소기관은 무세포 응축체 단위 정량이라 가장 가까운 태그로 붙임. 기존 기술 한계 극복을 직접 언급한 문장은 없음","[병행] Zeiss LSM880 Airyscan → 생세포 OASL1–mCherry FRAP(37 °C, 2초 간격)
+[병행] 공초점 현미경(제조사·모델 명시 안 됨) → 면역형광·ThT 염색
+[병행] Keyence BZ-X710 → in vitro 상분리 형광(×20·×40·×60), PLA, IHC 명시야
+[병행] FEI Tecnai F20 TEM(200 kV, TVIPS 카메라) → 면역금 표지, 단축 경사 전자단층
+[대체] 명시 안 됨","Tomocube HT-2 [수치]: OASL 액적 부피·표면적·질량·농도·평균 RI(상분리 유도 후 증가), 구형도 0.8368±0.005769; 액적 중심부 RI 1.346→1.378; RIPK3(295–518) 부피·농도·평균 RI(OASL 혼합 후 증가, Ext. Data Fig. 4e); RIPK3 핵형성 시간경과 정량(Fig. 5e, n=15)
+Tomocube HT-2 [영상]: 3D RI 토모그램 + 3D 형광 중첩(Fig. 3e, 4e), 2D RI 단면
+기타: 질량분석(RIPK3 결합 단백질), IP·웨스턴블롯(P-RIPK3·P-MLKL), Sytox Green 세포사 동역학, LDH·ATP, 플라크 역가·qPCR, PLA 점 수(n=32), FRAP(K, R), 탁도, ThT 형광, TEM·전자단층 3D 모델, 족부 두께, 혈청 IL-1α ELISA, IHC 면적(%), Kaplan–Meier 생존곡선","SW 모듈명 명시 O — ‘All morphological and biochemical parameters were quantitatively obtained from RI tomograms ... using the TomoStudio software’
+HT-2(3D 형광 결합 개조형)로 취득한 RI 토모그램에서 형태·생화학 파라미터 정량까지 자사 SW에서 수행. 이후 통계만 타사 SW(Prism)로 넘김","ImageJ(Fiji) → PLA 점 정량, IHC 면적 정량, FRAP 영상 처리
+GraphPad Prism v9.1 → t-test·ANOVA, FRAP 단일지수 피팅
+IMOD v4.11.2 → 전자단층 가중 역투영 재구성
+PONDR → 내재적 무질서 영역 예측"
+"paper_04","2023 (온라인 2023-05-11)","iScience / 10.1016/j.isci.2023.106854 / 26(7), 106854","생체모방공학/합성생물학 (오징어 백색소포 모사: reflectin 발현 인간세포의 광학 특성 유전적·화학적 조절)","HEK 293 일시 발현 RfA1(Doryteuthis pealeii reflectin A1) 세포; HEK 293 안정 발현 RfA1 세포(퓨로마이신 선별); 비형질전환 HEK 293 대조군; 피브로넥틴 코팅 TomoDish, TomoChamber 37 °C, 100 mM NaCl 자극 전후 생세포
+제외(QPI 미관찰): 고정·면역표지 세포(Zeiss LSM 780 공초점으로만), 스크래치 어세이 배양(Cytation 5 명시야로만), 생존율 염색 세포(EVOS 형광으로만)","반사단백질(reflectin) 자기조립·응집; 세포 광산란·투명도 조절; 염 자극 반응
+핵심 발견: 일시·안정 발현 세포 모두 세포 안에 고굴절률 reflectin 구형 구조체가 형성됨. NaCl 자극 1시간 뒤 구조체 수는 줄고 RI·크기는 증가(응집). 안정 발현 세포는 같은 경향이지만 변화 폭이 작음. 고대비 구조체 덕분에 명시야 스크래치 어세이에서 이동 추적이 가능","#단일소기관 #단일세포 #연속관찰 #개별세포추적 #형태측정 #동시측정 #굴절률정량
+같은 세포의 세포내 구조체 수·RI·직경을 5초 간격 1시간 동안 추적(‘the same engineered cell typically contained’). 세포내 단백질 구조체는 소기관은 아니지만 가장 가까운 태그로 #단일소기관을 붙임. 한계로 1시간 이상 연속 촬영의 기술적 어려움을 언급. 기존 기술 한계 극복을 직접 언급한 문장은 없음","[병행] Thermo Scientific EVOS M5000 → 위상차·형광 생세포 영상(15초 간격 24시간), 생존율(Hoechst/SYTOX)
+[병행] Zeiss LSM 780 공초점(GaAsP 검출기) → 고정세포 면역형광(reflectin·DAPI·팔로이딘)
+[병행] BioTek Cytation 5 → 스크래치 어세이 명시야(2분 간격 24시간)
+[대체] 명시 안 됨","Tomocube HT-2 [수치]: 세포당 구조체 수(일시 발현 약 50–80→약 20–40, 안정 발현 약 20–40→약 10–30), 최고 RI(일시 약 1.41–1.43→약 1.44–1.46, 안정 약 1.40–1.43→약 1.41–1.44), 직경 분포 피크(일시 약 400→약 800 nm, 안정 약 800→약 600 nm; 꼬리 >1400–1600 nm), 반복 실험 요약(Table S1–S3)
+Tomocube HT-2 [영상]: 위상 영상, 3D RI 맵, 5초 간격 1시간 시계열, 동영상 S1–S4
+기타: 생존율(일반적으로 >96%), 면역형광 영상, 스크래치 어세이 이동 추적(명시야), 위상차·형광 24시간 타임랩스","SW 모듈명 명시 O — ‘TomoStudio (v. 2.7.43)’ 및 ‘Tomocube Lipid Analysis software (v. 1.2.1)’
+TomoStudio로 위상·RI 맵 취득과 구조체 RI 추출. Lipid Analysis(지질방울용 모듈)를 reflectin 단백질 구조체의 수·크기 추출에 전용. QPI 정량은 자사 SW 안에서 완결","ImageJ v1.53 → 위상차·형광·명시야(스크래치) 영상 처리·분석
+ZEN Black v2.3 → 공초점 영상 취득
+ZEN Blue v3.2 → 공초점 영상 분석
+Gen5(BioTek) → 명시야 영상 취득
+ATUM Gene Designer → 발현 벡터 설계
+통계 SW: 확인 불가(첨부본의 통계 방법 절이 잘림)"
