@@ -1,0 +1,147 @@
+﻿"논문ID","발행연도","저널명/DOI","① [대분류] 연구분야","② [타깃] 관찰 시료·물질","③ [기전] 관찰 현상·메커니즘","④ [장비가치] 측정 니즈","⑤ [관계장비] 병행/대체 광학 장비","⑥ [산출물] 데이터 최종 산출물","⑦ 자사(Tomocube) AI/SW 활용","⑧ 타사 AI/SW 활용"
+"paper_10","2025 (온라인 2025-09-19)","Biomedical Optics Express 16(10), 4104 / 10.1364/BOE.574974 (Optica, 오픈액세스)","세포생물학/생물물리 (홀로토모그래피 기반 생세포 절대 수분함량 정량법 개발)","NG108-15 신경모세포종×신경교종 하이브리드 세포(분화 7–14일; Fig.1은 1 DIV); 랫드 E18 1차 해마 신경세포(6 DIV); CHO-K1(LCIS 내 삼투·nsPEF 자극); DOPC/DPPC/bDPPE 단일막 거대소포(GV, 수크로스 내용액)
+제외(QPI 미관찰): 해당 없음(모든 시료가 HT-X1으로 관찰됨. GV는 공초점으로 형성 확인 후 동일 위치를 HT로 촬영)","세포내 수분 항상성; 삼투 스트레스 반응(저삼투 팽윤); 유사분열(유사분열 전 응축); 막 투과성 변화(nsPEF 전기천공)
+핵심 발견: 2성분(물·단백질) 혼합 모델로 형상 가정 없이 복셀·세포 단위 절대 수분함량을 산출. GV 91.35±1.97%(기대 ~91.25%, p>0.82), CHO-K1 HT 86.1±1.4% vs 기존 QPI 86.3±2.3%(n.s.). 유사분열 원형화 시 수분 ~89%→~85% 감소. nsPEF 후 12분간 수분부피 1116→1302 fL로 연속 증가","#단일세포 #연속관찰 #개별세포추적 #분열추적 #형태측정 #건조질량 #질량밀도 #라벨프리 #동시측정 #수분함량
+근거: 세포별 건조질량·수분부피를 산출(#단일세포). NG108-15를 5분 간격 7시간, CHO-K1을 30초 간격 40분 촬영(#연속관찰). 한 세포를 유사분열 전후로 따라가며 원형화·말기·세포질분열과 딸세포 분배를 판독(#개별세포추적 #분열추적). RI 임계로 세포 부피를 구함(#형태측정: 3D 부피). 복셀별 단백질 농도(g/mL)를 계산(#질량밀도). 건조질량·수분부피·수분%를 한 번의 취득으로 얻음(#동시측정). (‘can be applied to unlabeled live cells of arbitrary shape’). 기존 기술 한계 극복 직접 언급 있음: (‘eliminate the need for geometrical constraints that were burdensome for our previous QPI methods’). 신규 태그 #수분함량은 요약 참조","[병행] Tomocube HT-X1(Tomocube, Inc.; 진동 방지 광학 테이블) → 모든 HT 취득. 유일한 3D QPI이자 주력 장비
+[병행] 자체 2D QPI 기법(선행연구 [12]; 장비명 명시 안 됨) → CHO-K1 수분함량 교차검증(N=23)
+[병행] Leica TCS SP5 II 공초점(488 nm; 40×/1.1 수침, 100×/1.4 유침) → Fluovolt 막 염료로 GV 형성·부착 확인, 격자 위치 기록
+[병행] Fisherbrand HDR-P6 디지털 굴절계(±0.0003) → 촬영 전 배지 RI 측정
+[대체] 자체 2D QPI(구형 형상 가정·세포 구형화 준비 필요) → HT로 대체해 형상 제약 제거(Conclusion에 명시)","Tomocube HT-X1 [수치]: 세포 부피(RI 임계 복셀 합), 건조질량(pg), 수분 부피(fL), 수분 질량분율(%). GV 91.35±1.97%(N=18). CHO-K1 86.1±1.4%(N=49). NG108-15 건조질량 441→746 pg(0.25–1.25 h), 1015→최고 1023 pg, 수분부피 4134→7944 fL. 유사분열 시 수분 ~89→~85%. nsPEF 1116→1302 fL(N=14), 20% 저삼투(N=12), sham(N=23). 계통오차 ±0.57%(PSV·dn/dc 3σ 전파)
+Tomocube HT-X1 [영상]: TomoAnalysis 3D 렌더링, 단일 z면 RI 맵, 복셀별 수분%(질량) 맵, 유사분열 타임랩스(정량 동반)
+자체 2D QPI [수치]: CHO-K1 수분 86.3±2.3%, 절대 수분 부피
+기타: COMSOL 전기장 모델(전극 사이 최대 23.9 kV/cm, 시야 내 7.0–16.7 kV/cm), 공초점 GV 형광·명시야 이미지","SW 모듈명 명시 O: TomoAnalysis (버전 명시 X) — 원문 ‘HT images were processed with the TomoAnalysis software where segmentation was performed using refractive index thresholding.’
+3D RI 토모그램의 RI 임계값 분할(CHO-K1·NG108-15별 임계값은 경험적으로 결정)과 3D 렌더링(Fig.1a). 이후 복셀별·세포 전체 수분함량 계산은 타사 SW(MATLAB)로 넘김","MATLAB (버전 명시 X) → HT 토모그램에서 복셀별 수분 질량분율, 세포 전체 부피·건조질량·수분함량 계산(2성분 모델 구현)
+COMSOL Multiphysics → 평행 전극 nsPEF(600 V, 600 ns) 전기장 분포 시뮬레이션
+통계 SW → 명시 안 됨(t-test만 기재)
+※ 유출: 분할은 자사 TomoAnalysis, 2성분 모델 기반 수분함량·건조질량 정량은 MATLAB 자체 코드"
+"paper_11","2025 (온라인 2025-08-31, bioRxiv v1)","bioRxiv 프리프린트 / 10.1101/2025.08.26.672505 — 정식 게재판 DOI 확인 불가(검색 시점 기준 미확인)","암/종양학 (췌장관선암의 신경주위 침윤을 매개하는 Pdgfd-Pdgfrb 종양-신경 상호작용)","Plp-EGFP 마우스 전체 DRG 외식편 + KPT(KrasLSL-G12D/+;Trp53FL/FL;tdTomato) 췌장암 세포 공배양(라이브 공초점과 ‘유사하게 준비’해 Tomocube HT-X1 Plus로 촬영; Movie S4)
+제외(QPI 미관찰): 인간 PDAC FFPE TMA(GeoMx WT-DSP·CosMx 6K-SMI·다중 IF/Nikon AXR); KP;dCas9-VPR CRISPRa 세포주(Incucyte SX5 침윤·방사 침윤, transwell); Nav1.8-Cre-tdTomato 해리 DRG 신경세포(Incucyte NeuroTrack); Plp-EGFP 교세포(Incucyte·유세포); 오가노이드·동소이식 종양·좌골신경(Nikon AXR); HEK293T(바이러스 생산)","신경주위 침윤(PNI); 암세포-신경교세포 상호작용(교세포의 암세포 물리적 견인); 신경돌기 성장; 암세포 침습(EMT 동반)
+핵심 발견: 공간전사체 스크린에서 신경 근접 악성세포에 PDGFD가 공통으로 증가. Pdgfd는 Pdgfrb를 통해 암세포 침습, 신경돌기 성장, 교세포 이동·견인을 증가시킴. SU16f로 Pdgfrb를 차단하면 체외 침윤과 생체 내 좌골신경 침윤이 감소","#세포간상호작용 #연속관찰
+근거: HT는 교세포가 암세포 스페로이드를 신경을 따라 끌어당기는 현상의 3D 검증에만 사용(‘Using a 3D phase holotomography imaging approach, we further validated the phenomenon’) → #세포간상호작용. 결과가 동영상(Movie S4)이고 견인은 동적 현상이므로 #연속관찰로 태그. 단, HT 촬영 간격·시간은 명시 안 됨(동영상 원본 미확보). 라벨프리·저광독성 언급 없음. 기존 기술 한계 극복을 직접 언급한 문장은 없음","[병행] Tomocube HT-X1 Plus → 3D 위상 홀로토모그래피, DRG-암세포 공배양의 견인 현상 검증(Movie S4). 논문 내 유일한 QPI, 보조적 역할
+[병행] Sartorius Incucyte SX5 → 전체 DRG 침윤·방사 침윤·신경돌기 성장 위상차·형광 타임랩스(6시간 간격)
+[병행] Yokogawa CellVoyager CQ1 스피닝디스크 공초점 → Plp-EGFP DRG + KPT 라이브 영상(25분 간격 ~24시간), 견인 거리 정량
+[병행] Nikon AXR 공초점 → 전체 슬라이드 IF(10×), 동소이식 종양 절편, 투명화 좌골신경
+[병행] Bruker/NanoString GeoMx DSP → 전사체 전체 공간 프로파일링(형광 형태 마커로 ROI 선택)
+[병행] Bruker/NanoString CosMx SMI → 6,200-plex 단일세포 공간 분자영상
+[병행] Thermo Attune NxT 유세포분석기 → 신경세포·교세포 Pdgfrb 발현
+[대체] 명시 안 됨","Tomocube HT-X1 Plus [영상]: 교세포에 의한 암세포 견인 3D 위상 동영상(Movie S4). 정성 검증 자료이며 정량 지표 없음
+Tomocube HT-X1 Plus [수치]: 명시 안 됨
+기타: 신경침윤지수·평균 침윤 속도·거리(n=7–8), 방사 침윤 면적 AUC(0–120 h), Ki67+ 면적, 신경돌기 성장 AUC(48 h), DRG 축삭 면적, 교세포 견인 거리(n=37–51 스페로이드), transwell 침윤 세포 수, WT-DSP 433 ROI·6K-SMI 43 FOV DE·GSEA·SCOTIA, PDGFD MFI(환자 10명), 유세포 Pdgfrb+ 교세포 29.6%→98.7%, 좌골신경 침윤 거리, 췌장 무게, bulk RNA-seq","SW 모듈명 명시 X — 장비명 ‘Tomocube HT-X1 Plus’만 기재(‘For 3D phase holotomography, samples were similarly prepared and imaged on a Tomocube HT-X1 Plus.’)
+3D 위상 영상 취득·동영상화. 분할·정량 없음. 타사 SW로 넘긴 QPI 분석도 없음","ImageJ FIJI 커스텀 스크립트 → PNI 양성 ROI 분할(신경·100/300 μm 동심 영역 AOI)
+ImageJ → 공초점 채널 병합, 견인 분석. 커스텀 ImageJ 매크로 → transwell 침윤 세포 계수
+GeoMx NGS Pipeline v2.0 → FASTQ→DCC 변환. R v4.1.2 GeoMxTools v2.0.0 → QC·정규화. lme4 v1.1-31·lmerTest v3.1-3 → 선형혼합모형 DE
+Cellpose v2.0.5 → CosMx 세포 분할 [ML]
+Baysor v0.6.0 → 분할 강건성 비교 [ML]
+Seurat v4.2.0·Harmony·NBclust·UMAP → 클러스터링·배치 보정
+Insitutype v1.0.0 → 지도 클러스터링 기반 세포유형 주석 [ML]
+ComBat(sva v3.46.0) → 배치 보정. Giotto v2.0.0 → UMAP 표시
+SCOTIA v1.0.0·CellChat DB → 공간 리간드-수용체 상호작용 추론
+QuPath 커스텀 워크플로 → IF 양성세포 검출·임계값 기반 객체 분류, 신경 아형 분할
+Incucyte NeuroTrack 모듈(Sartorius) → 신경돌기·세포체 분할
+CRISPick → gRNA 설계
+※ 유출: 해당 없음(Tomocube 데이터는 정성 영상만 사용, QPI 분할·정량 미수행)"
+"paper_12","2025 (온라인 게재일 미확인)","Science Advances 11(35), eadv9759 / 10.1126/sciadv.adv9759 (프리프린트: bioRxiv 10.1101/2024.12.10.627803)","세포생물학/생물물리 (고장성 삼투 충격 후 세포 질량밀도(CMD) 회복의 능동 조절 기전)","Tomocube HT-2H: NIH3T3, HT1080(단일세포 부피-질량 산점도·고장성 1–48 h). HoloMonitor M4: NIH3T3, HT1080 및 단일세포 클론, T47D, Hs578, RPE-1 2n/4n, MCF-10A, MDA-MB-231 및 SCC-1006/1304/1308(집단 광학부피)
+제외(QPI 미관찰): NIH3T3-FUCCI(에피형광 세포주기), NIH3T3 NES-GFP/NLS-tdTomato-NES(LSM 800 FRAP), pHrodo·SUnSET·유비퀴틴 염색 세포(에피형광), PI 염색 세포(유세포), HEK293T/17(렌티바이러스 생산)","세포 질량밀도 항상성; 삼투 스트레스 반응(조절성 부피 증가); 단백질 합성 조절; 핵-세포질 수송
+핵심 발견: 대부분 세포유형의 CMD는 180–200 fg/μm³로 일정(T47D만 150). 145% 고장성 충격 직후 CMD가 25% 증가한 뒤 48시간에 걸쳐 단조 회복되며 세포주기와 무관. NHE(ezrin·MEK 매개) 활성으로 부피 증가, 단백질 합성률 감소가 음성 피드백으로 작동. CMD 증가 시 핵 유입 증가. PID 제어 모델(비례항 우세)로 회복 곡선을 설명","#단일세포 #대량세포 #연속관찰 #개별세포추적 #형태측정 #건조질량 #광학부피 #질량밀도 #동시측정 #형광결합
+근거: HT-2H로 단일세포 부피·질량·밀도를 산출(n≥262, #단일세포 #형태측정 #동시측정). HoloMonitor로 반복당 74개 이상 세포의 집단 평균 광학부피를 측정(‘Both methods are high throughput’, #대량세포 #광학부피). 충격 전후 5분 간격으로 같은 세포를 추적(‘capturing the same cells throughout the process’, #연속관찰 #개별세포추적 — HoloMonitor·FXm). 건조질량·CMD는 QPM 광학부피와 FXm 형광 부피를 결합해 계산(#건조질량 #질량밀도 #형광결합). 분열 세포 측정(Fig.2G)은 분열 판독 장비가 불분명해 #분열추적 미부여. 라벨프리 언급 없음(FXm은 덱스트란 염료 사용). 기존 기술 한계 극복을 직접 언급한 문장은 없음","[병행·주력] PHI HoloMonitor M4 → 24웰 Lumox 플레이트에서 집단 광학부피 측정. Fig.1F·2–6 대부분의 질량·CMD 시계열 담당
+[병행] Tomocube HT-2H(532 nm, 60× NA 1.2 수침, DMD; 측면 95 nm·축 190 nm) + TomoChamber(37°C, 5% CO2) + TomoDish → 단일세포 3D ODT로 집단 측정 검증
+[병행] FXm 미세유체 칩(자체 제작, Alexa Fluor 488 덱스트란) + Zeiss Axio Observer(20×/0.8, Hamamatsu Flash4.0 V3) → 세포 부피, pHrodo pH, SUnSET·유비퀴틴 IF, FUCCI(15분 간격 60 h)
+[병행] Zeiss LSM 800 공초점 → FRAP 핵 수송률, FXm 채널 높이(Z-stack, 비드 PSF 디컨볼루션)
+[병행] 유세포분석기(모델 명시 안 됨) → PI DNA 함량, NES-tdTomato-NLS 발현 세포 선별
+[병행] Molecular Devices 비색계 → 닌히드린 아미노산(570 nm)
+[병행] Milwaukee MA871 디지털 굴절계 → 배지 RI
+[대체] 명시 안 됨","Tomocube HT-2H [수치]: 단일세포 부피(0이 아닌 픽셀 수), 광학부피(배경 초과 RI 적분), 건조질량, CMD. NIH3T3 질량-부피 기울기 208 fg/μm³(n≥262). 등장성·고장성 1/4/7/24/48 h 단일세포 질량-부피(n≥202)
+Tomocube HT-2H [영상]: 3D RI 토모그램(fig. S1B·E)
+HoloMonitor M4 [수치]: 세포별 광학부피(총 위상 변화). FXm 부피와 결합해 집단 건조질량·CMD(180–200 fg/μm³, T47D 150 fg/μm³). 충격 직후 CMD +25%, 48 h 후 등장성 수준으로 회복. 5분 간격 단일세포 추적(n≥151)
+기타: FXm 부피(충격 직후 −25%), pHrodo 세포내 pH(n≥455), SUnSET 단백질 합성률(30–60분 최대 ~40% 감소), 유비퀴틴 IF, PI DNA 함량, FUCCI G1/G2 길이(n=20), FRAP 핵 유입률(n≥9), 닌히드린 아미노산(N=6), 키네틱·PID 모델 피팅","SW 모듈명 명시 X — 장비명 ‘HT-2H (TomoCube)’와 액세서리 ‘TomoChamber’·‘TomoDish’만 기재
+3D RI 토모그램 취득. 2D MIP 분할→3D 마스크 적용, RI 임계값(NIH3T3 1.36, HT1080 1.355) 분할, 부피·광학부피 계산은 선행논문 [51] 방법을 인용하나 수행 SW는 명시 안 됨","Holomonitor M4 전용 SW(PHI) → 세포별 총 위상 변화(광학부피) 분석 — 타사 QPI SW
+MATLAB 커스텀 코드 → FXm 세포 마스킹·자동 추적(수동 검수)·부피 계산
+ZEN 2.6/3.6(Zeiss) → 에피형광·공초점 영상 획득
+GraphPad Prism 9/10 → 일원분산분석·Dunn-Šidák 다중비교
+※ 유출: HT-2H 3D 분할·부피/광학부피 계산을 수행한 SW가 불분명(자사 SW 사용 근거 없음). 집단 QPI 분석은 경쟁사 HoloMonitor 전용 SW가 담당"
+"paper_13","2025 (온라인 2025-08-22)","JoVE (J. Vis. Exp.) (222), e68498 / 10.3791/68498 — 권호 번호는 검색 결과 기준(원문 미확인)","암/종양학 (라만 분광-단층위상현미경 결합 기반 생세포 유방암 표현형 분석 프로토콜)","MDA-MB-231 인간 유방암 세포주(ATCC HTB-26), 3.5 cm 석영 바닥 페트리 디쉬, 비표지 생세포
+제외(QPI 미관찰): 확인 불가(본문 유료) — 초록 기준 동일 세포를 라만으로도 관찰","암세포 표현형 이질성; 세포 형태-화학 조성(세포내 분자 분포)
+핵심 발견(초록 기준): 라만 초분광(600–1800 cm⁻¹)과 3D RI 토모그램(부피·표면적·접착면적·구형도·건조질량·밀도)을 사람 편향 없는 파이프라인으로 분석해 MDA-MB-231을 형태-화학적으로 표현형 분석. 두 데이터셋의 고유·상관 정보를 논의. 세부 결과는 확인 불가(본문 유료)","#단일세포 #형태측정 #건조질량 #질량밀도 #라벨프리 #동시측정 #라만결합
+근거(초록·Materials 표만 확보): (‘rich single-cell details that RS and TPM deliver’) → #단일세포. 부피·표면적·접착면적·구형도(#형태측정), 건조질량(#건조질량), 밀도(#질량밀도)를 토모그램에서 함께 산출(#동시측정). (‘living, label-free cells in their native physiological environment’) → #라벨프리. QPI와 라만 분광을 결합(#라만결합, 신규). 시간·추적 관련 태그는 확인 불가(본문 유료). 기존 기술 한계 극복을 직접 언급한 문장은 없음(확보 범위 내)","[병행] 자체 제작 공초점 라만 현미경 → Olympus IX83 본체, Spectra-Physics 3900S 785 nm Ti-Sapphire(Millennia eV 펌프), ThorLabs DMSP750B, Andor Holospec HS-HSG-785-LF 분광기, Princeton PIXIS 100BR eXcelon CCD, Olympus UPLSAPO 60× 1.2 NA 수침, Tokai Hit 인큐베이터 → 라만 초분광 영상
+[병행] Tomocube HT-2H → TPM 정량위상 영상(Materials 표: ‘Commercial system for obtaining quantitative phase images’)
+[병행] Hamamatsu Orca Flash 4.0 v2 sCMOS → 명시야·형광 채널(용도는 Materials 표 기준 추정 불가, 확인 불가(본문 유료))
+[대체] 명시 안 됨","Tomocube HT-2H [수치]: 세포 부피, 표면적, 접착면적(footprint), 구형도, 건조질량, 밀도(초록 기준. 구체 수치는 확인 불가(본문 유료))
+Tomocube HT-2H [영상]: 3D RI 토모그램(nm 해상도)
+기타: 라만 초분광 영상(600–1800 cm⁻¹) 기반 분자·세포내 구조 정보, RS-TPM 상관 분석(세부 확인 불가)","SW 모듈명 명시 O: TomoStudio (버전 명시 X) — Materials 표 ‘TomoStudio | Software used for analyzing tomographic phase microscopy (TPM) data.’
+TPM 데이터 분석. 분할·지표 산출 방식과 이후 타사 SW로 넘긴 작업은 확인 불가(본문 유료)","MATLAB 2023a → 용도 확인 불가(Materials 표에만 기재, 본문 유료)
+RamApp → 웹 기반 라만 초분광 데이터 처리
+LightField(Princeton Instruments) → CCD 카메라 제어
+Micro-Manager 2.0 → 오픈소스 현미경 제어
+※ 유출: 확인 불가(본문 유료) — MATLAB이 TPM 지표 처리에 쓰였는지 불분명"
+"paper_14","2025 (온라인 게재일 미확인)","Journal of Cellular Biochemistry 126, e70052 / 10.1002/jcb.70052 (프리프린트: bioRxiv 10.1101/2024.09.04.611269; 정정 공지 10.1002/jcb.70074 존재)","대사·내분비학 (과당·포도당이 갈색 전구지방세포의 증식·분화·지질 형성에 미치는 영향)","hTERT 불멸화 인간 갈색 전구지방세포(HBP, Tseng Lab 유래), TomoDish, 4% PFA 고정, 분화 0/7/14/21일, 조건 C1–C5(고포도당 25 mM, 무당, 과당 5 mM, 과당 5+포도당 5 mM, 과당 5+포도당 15 mM)
+제외(QPI 미관찰): SV40 불멸화 마우스 갈색 전구지방세포(MBP) — 증식곡선(장비 명시 안 됨), LipidTOX/BODIPY 형광(Leica DMi8), 웨스턴블롯, Luminex 사이토카인, 배지 젖산·아미노산","지방세포 분화(지방생성); 지질방울 형성·융합; 세포 비대; 당 대사 재프로그래밍
+핵심 발견: 과당만 있을 때 MBP 증식은 유지되나 젖산 ~50% 감소, 지질·PPARγ·C/EBPα·UCP1·IL-6 감소. HBP ODT에서 무당(C2)은 지질 형성 거의 없음, 과당 단독(C3)은 1 μm 미만 소형 지질방울 위주. 과당+포도당(C4·C5)은 21일 건조질량 ~3500 pg, 부피 ~35,000 μm³로 최대이며 지질 기여율 30–40%","#단일세포 #단일소기관 #연속관찰 #형태측정 #건조질량 #광학부피 #라벨프리 #동시측정
+근거: 시야당 한 세포로 마스킹해 세포별 값을 산출(#단일세포). RI>1.380으로 지질방울을 분리해 지질 질량·부피·직경을 측정(#단일소기관). 0/7/14/21일 시계열 촬영(#연속관찰 — 단, 시점별 별도 고정 시료이며 동일 세포 추적 아님). 세포 부피, 지질방울 타원 피팅 직경(#형태측정). OPD 적분으로 광학부피 차를 구하고 건조질량으로 환산(#광학부피 #건조질량). 한 토모그램에서 세포·지질 지표를 함께 산출(#동시측정). (‘ODT is a label-free technology ... without introducing external contrast agents’) → #라벨프리. 질량밀도 미산출. 기존 기술 한계 극복을 직접 언급한 문장은 없음","[병행] Tomocube HT-2H(모터 스테이지, 60× 1.2 NA 수침, 532 nm, DMD) + TomoDish → HBP 3D RI 영상. 유일한 QPI
+[병행] Leica DMi8 → MBP 생세포 LipidTOX Deep Red 지질방울 형광 영상
+[병행] Luminex MagPix → MBP 배양액 사이토카인(IL-6, VEGF) 비드 분석
+[대체] 명시 안 됨","Tomocube HT-2H [수치]: 세포 건조질량(pg; D7 C5 ~1000, D14 ~1500, D21 C4·C5 ~3500), 세포 부피(μm³; D7 ~12,500, D14 20,000–25,000, D21 C4·C5 ~35,000), 지질 질량(D21 C5 ~1500 pg), 지질 부피(D21 C5 ~4500 μm³), 지질질량 기여율(C2 <5%, C3 ~20%, C4 30%, C5 40%), 지질방울 직경별 면적 기여율(융합 지질방울 최대 ~45 μm, 전체의 <2%), Wilcoxon 검정(Table S1–S3)
+Tomocube HT-2H [영상]: 시점·조건별 3D RI 토모그램, 2D MIP(Fig.3)
+기타: MBP 컨플루언스 증식곡선, 배지 젖산·알라닌·세린, BODIPY/DAPI 형광 정량(~50% 감소), 웨스턴(PPARγ, C/EBPα, UCP1, ACC, ACLY), Luminex IL-6·VEGF","SW 모듈명 명시 O: TomoStudio (버전 명시 X) — 원문 ‘TomoStudio (TomoCube, Republic of Korea) was used to visualize and obtain 3D RI tomogram images and 2D maximum intensity projection (MIP) images.’
+3D RI 토모그램 시각화와 2D MIP 생성까지 담당. 세포 분할은 ImageJ에서 수동(‘Cell segmentation was performed manually on 2D MIP images using ImageJ’), 3D 임계 분할·건조질량·지질 정량·통계는 MATLAB으로 넘김","ImageJ → 영상 처리, 2D MIP 세포 수동 분할 후 마스크로 3D 스택에 적용(시야당 1세포)
+MATLAB → RI 임계(세포 1.337, 지질 1.380) 3D 분할, OPD 적분 기반 건조질량·지질 질량, 세포·지질 부피, 지질방울 타원 피팅 직경, Wilcoxon 순위합 검정
+Luminex xPONENT → 사이토카인 농도 계산
+※ 유출: QPI 세포 분할(ImageJ 수동)과 소기관(지질방울) 분할·정량 전 과정이 타사 SW. 자사 SW는 시각화·MIP 생성까지만 관여"
+"paper_15","2025 (온라인 2025-06-26)","Science 388(6754), 1389–1395 / 10.1126/science.adn1570","세포생물학/생물물리 (오징어 홍색소포의 구배 굴절률(사인파형) 기반 동적 구조색 기전과 이를 모사한 다중분광 소재)","오징어 Doryteuthis pealeii 등쪽 외투막 홍색소포: splotch 내부 3종(나선형 판 기둥형 ~96%, 적층 원반형 ~2%, 충전 구형 입자형 ~2%)과 splotch 외부 2종(평행 주름판형, 헤링본형). 생·고정 여부는 확인 불가(Methods 미확보)
+제외(QPI 미관찰): 생 피부조직(디지털 카메라·실체현미경·가시광 분광), 고정 조직(공초점·면역형광·미세분광광도계), 나노기둥 금속산화물 Bragg 반사체·탄성 복합소재(SEM·분광·열화상 — HT 관찰 근거 없음)","구조색(Bragg 반사); 동적 투명-발색 전환; 신경생리 자극(아세틸콜린) 반응
+핵심 발견: splotch 주력 홍색소포는 세포당 ~10–40개 판 기둥, 기둥당 ~5–45개 판, ~100–700 nm 주기로 구성되고, 불연속이 아닌 사인파형(rugate) RI 프로파일(판 RI ~1.35–1.42, 평균 ~1.39)을 가짐. 광학 모델상 이 프로파일이 고차 반사 억제로 완전 투명과 순색을 모두 가능케 함. 이를 모사한 가시-적외 가변 복합소재 개발(영률 1 MPa, 연신 790%, 응답 300 ms, 25,000 사이클)","#단일세포 #단일소기관 #형태측정 #동시측정 #굴절률
+근거: 개별·군집 홍색소포의 3D 구조와 RI 분포를 영상화(‘We visualized the iridophores’ global morphologies and refractive index distributions with holotomography’) → #단일세포 #동시측정. 세포내 reflectin 판·판 기둥을 분해(#단일소기관 — 막 소기관이 아닌 세포내 초미세구조임을 유의). 기둥 수·판 수·주기(#형태측정). RI 값·프로파일 자체를 광학 모델 입력으로 사용(#굴절률, 신규). 선행연구 한계 언급: (‘the cells’ morphologies and refractive index distributions were not directly characterized in three dimensions’). 다만 QPI 기술이 기존 기술 한계를 극복했다는 직접 문장은 아님. 라벨프리·시간 관련 언급은 확인 불가(Methods 미확보)","[병행] 홀로토모그래피(제조사·모델 확인 불가: ‘see methods’로만 기재, Methods·SI 미확보) → 홍색소포 3D RI 매핑·위상 영상
+[병행] 공초점 현미경(모델 명시 안 됨) → 고정 splotch·홍색소포 형태(비특이 대비 염색·핵 마커)
+[병행] 면역형광 현미경(모델 명시 안 됨) → reflectin 분포
+[병행] 미세분광광도계(모델 명시 안 됨) → 단일 홍색소포·소재 반사 스펙트럼
+[병행] 디지털 카메라·실체현미경·가시광 분광기 → 생조직 색·스펙트럼 변화
+[병행] 주사전자현미경(SEM) → 금속산화물 Bragg 반사체 단면
+[병행] 열화상 카메라·적외선 분광기 → 복합소재 열 외관·적외 특성
+[대체] 명시 안 됨","홀로토모그래피(모델 확인 불가) [수치]: 세포당 판 기둥 ~10–40개, 기둥당 판 ~5–45개, 판 주기 ~100–700 nm, 판 RI ~1.35–1.42(평균 ~1.39), 사인파형 RI 프로파일(fig. S5–S7), 기타 4종 홍색소포 RI 분포(fig. S8–S9)
+홀로토모그래피(모델 확인 불가) [영상]: 위상 영상, 3D RI 맵, movies S2–S9
+기타: 생조직 반사 스펙트럼(최대 200 nm 이동), 시야각 의존 스펙트럼, CIE 색도·색공간 시뮬레이션, Bragg 반사체 광학 모델, 소재 반사·투과 스펙트럼(~470/520/580 nm), 겉보기 온도 차(−18~+4°C), 영률 1 MPa, 파단 연신 790%, 응답 300 ms, 25,000 사이클 내구성","확인 불가(Methods·SI 미확보)
+본문 발췌에는 ‘holotomography (see methods)’만 있어 장비 모델·SW 모듈 모두 확인 불가","확인 불가(Methods 미확보) — 본문 발췌에 SW명 없음
+광학 시뮬레이션 도구 → 명시 안 됨(발췌 범위 내)
+※ 유출: 확인 불가(Methods 미확보)"
+"paper_16","2025 (온라인 게재일 미확인)","Gut 74, 1638–1652 / 10.1136/gutjnl-2025-335220 (관련 프리프린트: bioRxiv 10.1101/2023.08.14.553002)","암/종양학 (IPMN 연관 췌장암의 장쇄 수산화 설파타이드 축적과 UGT8 표적 대사 취약성)","확인 불가(QPI 관찰 시료 미확인) — 확보 텍스트는 초록뿐이며 QPI·홀로토모그래피 언급 없음
+제외(QPI 미관찰): 확인 불가(본문 미확보). 초록상 시료: 절제 인간 IPMN/PDAC 조직(n=23), Kras;Gnas 마우스 췌장, Kras;Gnas 유래 세포, 동종이식 종양","설파타이드 대사 변화; 미토콘드리아 형태 변화; 미토파지(세라마이드 매개); 내재적 세포사멸
+핵심 발견(초록 기준): MALDI-MS에서 장쇄 수산화 설파타이드가 IPMN/PDAC 신생물 상피에 선택적으로 축적. Visium 공간전사체에서 UGT8·Gal3St1·FA2H 발현이 설파타이드 부위와 일치. UGT8 억제·결손 시 FA2H·Gal3ST1 감소, 미토콘드리아 형태 변화, 호흡 감소, 미토파지·세포사멸, 동종이식 종양 성장 억제","확인 불가(본문 미확보)
+근거: 초록에 QPI 측정 언급 없음. 18종 태그 검토 불가. 기존 기술 한계 극복을 직접 언급한 문장은 없음(확보 범위 내)","확인 불가(본문 미확보)
+참고: 초록에는 MALDI-MS 공간 영상, Visium 공간전사체만 언급(광학 현미경 아님)
+[대체] 명시 안 됨","Tomocube: 확인 불가(QPI 사용 근거 없음 — 초록만 확보)
+기타: MALDI-MS 설파타이드 공간 분포(n=23), Visium 공간전사체, UGT8/FA2H/Gal3ST1 단백 발현, 미토콘드리아 형태·호흡, 세포사멸 지표, Kras;Gnas·Kras;Tp53;Gnas 동종이식 종양 성장","확인 불가(본문 미확보)
+초록에 Tomocube 장비·SW 언급 없음","확인 불가(본문 미확보)
+※ 유출: 확인 불가(본문 미확보)"
+"paper_17","2025 (온라인 게재일 미확인)","Advanced Healthcare Materials 14(6), e2402960 / 10.1002/adhm.202402960 (프리프린트: bioRxiv 10.1101/2024.08.16.608356)","신경생물학 (ODT와 형태 기반 궤적 추론을 이용한 체외 성상세포 형태 동역학 분석)","성상세포(7일 체외배양) — 종·유래·배양 기질 확인 불가(초록만 확보)
+제외(QPI 미관찰): 확인 불가(본문 미확보)","성상세포 형태 변화(길쭉한 형태→넓게 편평한 형태); 세포 조성 변화(부피·밀도 변화); 형태 발달 궤적
+핵심 발견(초록 기준): 7일간 면적이 늘고 크고 편평한 형태로 전환되며 부피·밀도가 변함. 비지도 클러스터링과 의사시간 궤적으로 형태만으로 신경세포 유형의 발달 궤적을 처음 추론","#단일세포 #연속관찰 #형태측정 #건조질량 #질량밀도 #라벨프리 #동시측정
+근거(초록만 확보): 형태 특성화·클러스터링을 세포 단위로 수행(#단일세포). 7일간 형태 변화 관찰(‘real-time measurements’, #연속관찰 — 촬영 간격·동일 세포 추적 여부 확인 불가). 부피·면적·형태(#형태측정), 건조질량(#건조질량), 밀도(#질량밀도)를 함께 산출(#동시측정). (‘establishing a label-free, quantitative method’) → #라벨프리. 기존 기술 한계 극복 직접 언급 있음: (‘capabilities that are challenging to achieve with conventional imaging techniques’)","확인 불가(본문 미확보) — ODT 장비 제조사·모델도 초록에 없음
+[대체] 확인 불가(본문 미확보)","ODT(모델 확인 불가) [수치]: 세포 부피, 건조질량, 면적, 밀도, 형태 클러스터, 의사시간 궤적(구체 수치 확인 불가)
+ODT(모델 확인 불가) [영상]: 3D RI 맵
+기타: 확인 불가(본문 미확보)","확인 불가(본문 미확보)
+초록에 장비·SW명 없음","도구명 확인 불가 → 비지도 클러스터링, 의사시간 궤적 추론(형태 특징 기반) [ML]
+※ 유출: 확인 불가(본문 미확보) — QPI 형태 특징의 클러스터링·궤적 분석 도구 미확인"
+"paper_18","2024 (온라인 2024-10-11)","Science 386(6718), eadl5767 / 10.1126/science.adl5767 (프리프린트: arXiv 2310.01982)","해양·환경과학 (해양 설(marine snow)의 보이지 않는 점액 꼬리가 침강과 탄소 격리에 미치는 영향)","확인 불가(QPI 관찰 시료 미확인) — 확보 텍스트는 구조화 초록뿐. ‘3D volumetric imaging of marine snow particles’의 기법명이 없어 QPI 여부 불분명
+제외(QPI 미관찰): 메인 주 만(EN667 항해) 80 m 퇴적물 트랩 채집 해양 설 응집체(등가 구경 <750 μm) — 수직 추적 현미경·추적 비드(700 nm–2 μm)로 관찰","해양 설 침강; 점탄성 점액(투명 외분비 고분자) 꼬리 형성; 유체-구조 상호작용; 생물학적 탄소 펌프
+핵심 발견: 100개 이상 응집체에서 가시 입자를 둘러싼 투명 점액 ‘혜성 꼬리’를 발견. 꼬리가 침강을 늦춰 유광층 평균 체류시간을 약 2배로 늘림. 스토크스 침강 기반 축소 모델과 침강 기반 점액 탄성 측정을 제시","확인 불가(QPI 사용 근거 없음 — 본문 미확보)
+근거: 초록에 ‘3D volumetric imaging’만 있고 QPI·홀로토모그래피 명시 없음. 18종 태그 검토 불가. 기존 기술 한계 극복을 직접 언급한 문장은 없음(확보 범위 내)","[병행] 자체 제작 스케일-프리 수직 추적 현미경(2축 짐벌 탑재, 선박 진동 억제) → 해상 현장 침강 장시간 추적, 추적 비드로 유동장 가시화
+[병행] 3D 체적 영상 장비 → 해양 설 이질적 미세구조 영상(기법·제조사·모델 확인 불가, 본문 미확보)
+[대체] 명시 안 됨","Tomocube: 확인 불가(QPI 사용 근거 없음)
+기타: 개별 응집체 침강 속도, 주변 유동장, 점액 꼬리 반축(a, b), 유광층 체류시간(약 2배), 점액 점탄성 응답, 축소 차수 스토크스 모델, 3D 체적 영상(기법 불분명)","확인 불가(본문 미확보)
+초록에 Tomocube 장비·SW 언급 없음","확인 불가(본문 미확보)
+※ 유출: 확인 불가(본문 미확보)"
+"paper_19","2024 (온라인 2024-06-29)","Communications Biology 7, 785 / 10.1038/s42003-024-06496-9","암/종양학 (라만 분광-단층위상현미경 공동등록을 이용한 대장암 진행 단계별 세포 표현형 판별)","HT29 대장 선암(ATCC HTB-38); RKO 대장암(CRL-2577); T84 대장암 폐전이(CCL-248) — 35 mm 석영 바닥 디쉬(기준 격자 표시), 비표지 생세포, 유형당 5개 세포
+제외(QPI 미관찰): 해당 없음(동일 세포를 라만과 공동등록 관찰)","암 진행 단계별 표현형(선종-암종-전이); 세포 형태 이질성; 세포 생화학 조성(핵산·단백질·지질)
+핵심 발견: HT29는 평균 RI·밀도·구형도·두께가 가장 높음. 라만 PCA-MLR에서 PC5(핵산 우세)가 가장 유의. 단일 변수 모델 정확도는 PC5 66.7%, 밀도(D) 73.3%이나 PC5+D 결합 모델은 100%(AIC 13.429). 라만 단백질 피크 적분과 TPM 건조질량이 선형 상관(PCC=0.977)","#단일세포 #단일소기관 #형태측정 #건조질량 #질량밀도 #라벨프리 #동시측정 #굴절률 #라만결합
+근거: 세포별 8개 형태 지표 산출(#단일세포). 세포내 소기관 특성화(Supplementary Fig.10, #단일소기관 — SI 원문 미확보). V·S·A·Φ·T(#형태측정), DM(#건조질량), D(#질량밀도), 평균 RI를 독립 지표로 사용(#굴절률, 신규). 한 토모그램에서 8개 지표를 산출(#동시측정). 비표지 생세포(‘label-free living cells’, #라벨프리). 라만과 공동등록(#라만결합, 신규). 형광의 광독성 비판은 있으나 QPI 장시간 촬영의 저광독성 언급은 아니므로 #저광독성 미부여. 기존 기술 한계 극복 직접 언급 있음: (‘it comes with inevitable photo-bleaching, difficult signal reproducibility, some extent of photo-toxicity’), (‘the major drawback of QPI techniques consists of a lack of chemical selectivity’)","[병행] 자체 제작 공초점 라만 현미경 → Olympus IX83, Spectra-Physics 3900S 785 nm Ti-Sapphire(Millennia eV 펌프), ThorLabs DMSP750B, Olympus UPLSAPO 60× 1.2 NA 수침, Andor Holospec HS-HSG-785-LF, Princeton PIXIS 100BR eXcelon, Tokai Hit 인큐베이터 → 50×50 스펙트럼/FOV, 1시간/FOV 초분광 영상
+[병행] Tomocube HT-2H(532 nm, 60× 1.2 NA 수침, 측면 ~110 nm·축 ~356 nm, DMD 49° 원형 스캔 100장, Rytov 재구성) + Tomo Chamber → 40×40×40 μm³ TPM 토모그램
+[병행] Hamamatsu Orca Flash 4.0 v2 sCMOS → 명시야·형광 채널(라만 시스템 내장)
+[대체] 명시 안 됨","Tomocube HT-2H [수치]: 평균 RI(HT29 1.364±6×10⁻⁴, RKO 1.359±7×10⁻⁴, T84 1.362±0.001), 밀도 D(0.159/0.133/0.148 pg/μm³), 구형도 Φ(0.685/0.572/0.566), 두께 T(2.835/2.465/2.289 μm, 타원체 근사), 부피·표면적·접착면적·건조질량, DM-V 상관(PCC 0.982/0.983/0.987), 유형별 PCC 행렬(n=5/유형)
+Tomocube HT-2H [영상]: 축·시상·관상면 3D RI 단면
+기타: 라만 초분광 영상(4채널 가색), 세포 평균 스펙트럼, PCA(PC1–10 누적 98.9%)-MLR(β5=−0.54, p=0.003), MLoR 표현형 추론(PC5+D 100%, LRT p=2.387×10⁻⁶, AIC 13.429), LOOCV, 라만 단백질 피크-DM 선형 적합(PCC 0.977, p=6.85×10⁻¹¹)","SW 모듈명 명시 O: TomoStudio (버전 명시 X) — 원문 ‘TPM holographic tomograms of cancer cells were analyzed using TomoStudio software (Tomocube Inc., South Korea).’
+PBS RI(1.3342) 배경 보정, 굴절증분 0.19 mL/g, RI 1.345 임계 체적 분할, 형태 지표(V·S·A·Φ·RI·D·DM) 산출. 추출값은 통계·분류를 위해 타사 SW(OriginPro)로 넘김. 두께 타원체 근사를 수행한 도구는 명시 안 됨","MATLAB 2020b 커스텀 스크립트 → Micro-Manager·DAQ 연동 라만 획득 자동화
+Micro-Manager → 오픈소스 현미경 제어
+RamApp(자체 개발 웹 도구) → 우주선 스파이크 제거, 적응형 평활 PLS 기저선 보정, Savitzky-Golay 노이즈 제거, 정규화
+MATLAB 2021b/2023a → 라만 PCA, PC1 기반 세포 픽셀 선택·평균 스펙트럼
+OriginPro 2022(PCA for Spectroscopy·Logistic Regression 애드온) → PCA-MLR, Mann-Whitney, PCC, 다항 로지스틱 회귀 표현형 분류·LRT·AIC·LOOCV [ML]
+BioRender → 모식도
+※ 유출: QPI 분할·지표 산출은 자사 TomoStudio. QPI 지표 기반 상관분석·표현형 분류(MLoR)는 OriginPro"
