@@ -1,0 +1,96 @@
+﻿"논문ID","발행연도","저널명/DOI","① [대분류] 연구분야","② [타깃] 관찰 시료·물질","③ [기전] 관찰 현상·메커니즘","④ [장비가치] 측정 니즈","⑤ [관계장비] 병행/대체 광학 장비","⑥ [산출물] 데이터 최종 산출물","⑦ 자사(Tomocube) AI/SW 활용","⑧ 타사 AI/SW 활용"
+"paper_01","2026 (온라인 게재일 확인 불가)","ACS Nano / 확인 불가(DOI·권호·페이지 미확인 — 검색으로 저널명만 확인)","나노소재/약물전달 (HSA 단백질화 보로핀의 세포 외 안정성과 세포 내 분해의 분리)","인간 폐암 세포주 A549 생세포(BPH 또는 PBPH 처리, 0–24 h), 유리바닥 디시
+제외(QPI 미관찰): BPH/PBPH 나노시트 자체(TEM·cryo-TEM·AFM·SEM·XPS·XRD), 고정 A549(암시야 초분광·TEM), A549 세포 펠릿(ICP-MS/OES)","나노입자 세포 내 섭취; 세포 내 산화적 분해; 엔도리소좀 수송; 지질방울 상호작용
+핵심 발견: HSA 생체계면막(BIS)이 세포 외 산화를 억제하는 한편, 세포 내에서는 ROS·엔도리소좀 환경에 의해 PBPH 분해를 가속함. 섭취 경로가 클라트린 의존에서 거대음세포작용 우세로 전환되고, HT상 고-RI 반점이 지질방울과 공간적으로 겹침","#단일소기관 #연속관찰 #라벨프리
+세포 내 고-RI 반점(소포)과 내인성 지질방울을 구분·중첩 관찰, 0·6·12·24 h 종단 촬영 ('label-free 3D visualization of PBPH internalization in live cells'). 세포별 정량값은 제시 안 됨. 기존 기술 한계 극복을 직접 언급한 문장은 없음","[병행] CytoViva 초분광 현미경(400–1000 nm, 1.5 nm 분해능) → 고정 A549 내 BPH/PBPH 스펙트럼 분류
+[병행] Thermo Fisher Talos F200X TEM → 세포 내 PBPH 격자 소실(0.5–72 h)
+[병행] 명시야 현미경(모델 명시 안 됨) → 억제제 처리 후 생존·형태 확인
+[병행] 형광 판독 장비(모델 명시 안 됨) → CM-H2DCFDA ROS 측정
+[대체] 명시 안 됨","Tomocube HT-X1 [영상]: 3D RI 토모그램, MIP, 의사색 RI 맵(PBPH 녹색/세포 보라), 0–24 h 시간경과 RI 영상, 타일링 광시야(≈227×227 µm, 23 µm 중첩), scBF 영상
+Tomocube HT-X1 [수치]: 없음 — ‘Quantitative analysis of RI contrast’를 언급하나 그림·본문에 수치 미제시(정성적 판별)
+기타: ICP-MS/OES 세포 내·외 붕소 농도(1–72 h), 억제제별 섭취 비율, DCF 형광, HSI 구획별 스펙트럼, ITC(Kd 7.65×10⁻⁸ M, n 2.02), 로소시아닌 분해 속도상수(k 0.0107 vs 0.0085 min⁻¹), XPS·ToF-SIMS·HPLC-MS","SW 모듈명 명시 O: TomoStudio X (버전 명시 X) — ‘All imaging operations were controlled using TomoStudio X software’
+촬영·스테이지 인큐베이터 제어. RI 재구성(역디컨볼루션), 정규화 분산 기반 all-in-focus 투영, RI 대비 분석은 수행 SW 명시 안 됨","ImageJ → TEM 추가 영상 분석
+ENVI → 초분광 데이터 처리·픽셀 분류
+CasaXPS → XPS 분석
+Velox → EDS 원소 매핑
+Nanoscope Analysis 3.0 → AFM 영상 처리
+NanoAnalyzer → ITC 피팅
+GROMACS 2025.2·PACKMOL·VESTA·Python 자체 스크립트 → MD 시뮬레이션·모델 생성
+(QPI 데이터의 분할·정량을 맡은 타사 SW는 명시 안 됨)"
+"paper_02","2026 (2026년 4월, 온라인 정확 일자 확인 불가)","Cells / 10.3390/cells15080717 — 15(8), 717","재생의학 (VEGF mRNA 형질감염 MSC 유래 EV의 내피세포 생존 촉진)","STS(25 nM) 전처리 1차 HUVEC(ATCC PCS-100-010) + ExoGlow-Protein(Red) 표지 EGFP-MSC 유래 EV, 24웰 유리바닥 플레이트(Cellvis)
+제외(QPI 미관찰): BM-MSC(RT-qPCR·ELISA·유세포), GFP-HUVEC+NHDF 공배양(IncuCyte 혈관신생), 96웰 HUVEC 아폽토시스 분석(IncuCyte), 분리 EV(NTA·MACSPlex·TEM)","세포외소포 내재화; 내피세포 아폽토시스; 혈관신생
+핵심 발견: VEGF mRNA 형질감염 MSC의 EV는 VEGF mRNA(약 800배)·단백질(약 50배)이 풍부하며, 대조 EV보다 HUVEC 아폽토시스를 12.6%p 더 줄임","#단일세포 #연속관찰 #형광결합
+2 h 간격 14 h 동안 HUVEC 내 EV 클러스터의 진행적 내재화를 RI+형광으로 3D 관찰 ('Real-time 3D imaging was performed using the Tomocube HT-X1 for 14 h'). 개별 세포 영상이나 세포별 수치 산출은 없음. 기존 기술 한계 극복을 직접 언급한 문장은 없음","[병행] Sartorius IncuCyte S3 → 혈관신생 네트워크 형성(6 h 간격, 10×) 및 Nuclight/Caspase-3/7 아폽토시스 타임랩스(1–2 h 간격)
+[병행] Malvern NanoSight NS300 → EV 크기·농도(NTA)
+[병행] Miltenyi MACSQuant16 유세포분석기 → MACSPlex EV 표면마커
+[병행] JEOL 1400 TEM(80 kV) → EV 음성염색 형태
+[대체] 명시 안 됨","Tomocube HT-X1 [영상]: 3D RI+녹색(EGFP)/적색(ExoGlow) 형광 타임랩스(0–14 h, 2 h 간격, Fig. 4A), 14 h 시점 3D 다평면 재구성 동영상(Video S2)
+Tomocube HT-X1 [수치]: 없음 — 내재화는 정성적 이미지로만 제시
+기타: VEGF mRNA 배수(Day1 >20,000배), 분비 VEGF(89.4 ng/mL), 네트워크 길이, EV 농도(1.60×10¹⁰ / 1.16×10¹⁰ particles/mL)·직경(110.1 / 128.6 nm), EV 마커(CD9·CD63·CD81), Ct·copy number, 아폽토시스 세포 감소율(26.6% vs 16.0%)","SW 모듈명 명시 O: TA viewer (Tomocube, v2.1.5) — ‘images were analyzed by TA viewer software ... to assess EV internalization’
+RI·형광 3D 영상 열람과 EV 내재화 평가. 정량 기능 사용 여부는 명시 안 됨. 이후 분석을 넘긴 타사 SW 없음","IncuCyte software v2024B(자동 혈관신생 알고리즘) → 네트워크 길이 정량
+IncuCyte basic analyzer → 적색/녹색 공위치 아폽토시스 세포 계수
+NanoSight NTA 3.4 → 입자 크기·농도
+MACSQuant analysis software 2.13.0 → EV 표면마커
+GraphPad Prism 10.0.0 → 표준곡선·ANOVA
+Microsoft Excel → 계산"
+"paper_03","2026 (2026년 4월호, 온라인 정확 일자 확인 불가)","PNAS Nexus / 10.1093/pnasnexus/pgag089 — 5(4), pgag089","세포생물학/생물물리 (노화에 따른 세포질 밀집과 역학 변화)","SAMR1(젊은 대조군)·SAMP8(노화군) 마우스 폐 유래 1차 섬유아세포(5계대 이내)
+제외(QPI 미관찰): 명시 안 됨 — 동일 섬유아세포를 공초점(형태·이동)·광학핀셋으로도 관찰. 야생형 마우스 세포(Fig. S7)의 관찰 수단은 확인 불가(SI 미확보)","세포 노화; 세포질 분자 밀집; 세포질 강성; 세포 이동
+핵심 발견: 노화 세포는 퍼짐면적이 크고 둥글며 느리게 이동함. 세포질 강성은 약 2배이고, 세포 내 힘은 크지만 운동은 감소함. RI·건조질량밀도가 높고 건조질량은 증가, 부피는 감소해 세포질 밀집을 시사함","#단일세포 #건조질량 #광학부피 #질량밀도 #라벨프리 #동시측정 #굴절률
+세포별 RI·건조질량밀도·건조질량·부피를 한 토모그램에서 산출 ('a label-free approach that can image cellular morphology and quantify RI'). #광학부피는 3D 토모그램 기반 세포 부피. 기존 기술 한계 극복을 직접 언급한 문장은 없음","[병행] 공초점 현미경(모델: 본문 명시 안 됨, SI 미확보) → F-actin·vimentin 형태, 10 h 이동(5분 간격), 500 nm 비드 요동, 부피 교차검증(Fig. S1)
+[병행] 광학핀셋(모델 명시 안 됨) → 870 nm 비드 능동 미세유변학·전단탄성률
+[대체] 명시 안 됨","Tomocube HT-2H [수치]: 핵주위 RI 1.34812 vs 1.34101, 전체 세포질 RI 1.34351 vs 1.33988, 건조질량밀도 78.20 vs 41.34 g/L(핵주위)·56.20 vs 26.68 g/L(전체), 건조질량 424.57 vs 268.36 pg, 부피 7.648 vs 10.28 ×10³ µm³ (노화 vs 젊은, n=2 마우스·k≥8 세포)
+Tomocube HT-2H [영상]: 단일 초점면 RI 맵, 3D RI XY/YZ 임계 재구성(Fig. 3A–B)
+기타: 퍼짐면적(1.88 vs 0.84 ×10⁴ µm²), 종횡비(1.597 vs 1.853), 이동속도(0.2153 vs 0.2933 µm/min), 비드 MSD, 힘 스펙트럼, 스프링상수(13.3 vs 6.50 Pa·µm), 전단탄성률(2.787 vs 1.391 Pa)","SW 모듈명 명시 X — 장비명 ‘HT-2H, Tomocube’만 기재(본문 요약 Methods 기준, 전체 Methods는 SI Appendix로 미확보)
+3D RI 재구성, RI 임계값 기반 핵·세포질 분할(RI>1.38 지방방울 제외), 두 ROI(전체·핵주위)의 RI·건조질량밀도 산출. 수행 SW는 불분명","ImageJ → 공초점 최대투영, 퍼짐면적·종횡비(타원 피팅)
+TrackMate → 세포 이동 및 세포 내 비드 궤적 추적(MSD 계산)
+(nested ANOVA 통계 SW: 명시 안 됨)"
+"paper_04","2026 (온라인 2026-01-29)","Nature Immunology / 10.1038/s41590-025-02377-3 — 27, 213–224","면역학 (SIRT2의 LCK K228 탈아세틸화에 의한 TCR 신호 역치 조절)","Fluo-4 AM 부하 WT·Sirt2−/− CD4⁺ OT-II T세포 + OVA 부하·CellTracker Orange 표지 B세포(APC) 1:1 혼합, TomoDish
+제외(QPI 미관찰): 비장·림프절 T세포(유세포 Indo-1 Ca 플럭스·인산화), 고정 T세포(Zeiss LSM 공초점), Jurkat 클론·인간 TIL(웨스턴·유세포), 마우스 조직(H&E), 흉선세포(유세포·TCR-seq)","T세포 수용체 신호전달; 칼슘 동원; 단백질 아세틸화; 항종양 면역
+핵심 발견: SIRT2가 LCK 링커 부위 K228을 탈아세틸화해 닫힌 형태를 안정화함. SIRT2 결손은 Ca²⁺·근위 TCR 신호를 증폭하고 TCR 레퍼토리를 넓힘. SIRT2 억제는 탈진 TIL의 반응성과 항종양 면역을 회복함","#세포간상호작용 #연속관찰 #형광결합
+T세포–APC 접촉 시 Ca²⁺ 유입을 HT와 형광으로 시분할 관찰 ('Cells were subjected to time-lapse imaging ... on a holotomographic microscope, HT-2'). QPI 결과 그림(Extended Data Fig. 1a) 범례는 첨부 본문에 없어 세포별 정량 여부는 확인 불가. 기존 기술 한계 극복을 직접 언급한 문장은 없음","[병행] BD FACSymphony A5, BD LSR II, Cytek → Indo-1 Ca 플럭스, p-LCK·p-ERK, CD62L 등 표현형
+[병행] Carl Zeiss LSM 공초점 → NFATc2·c-Jun 핵 전위 및 공위치
+[대체] 명시 안 됨","Tomocube HT-2 [영상]: 3D ODT RI 영상 + 단일 z 형광(Fluo-4 470 nm, CMRA 570 nm) 시간경과
+Tomocube HT-2 [수치]: Fluo-4 형광 강도 궤적(Ca²⁺ 유입, Extended Data Fig. 1a) — 형광 기반 수치이며 RI 기반 수치는 없음
+기타: Indo-1 Ca 플럭스 비율, 웨스턴블롯(p-LCK·ZAP70·PLCγ1·LAT), p-Y394 LCK⁺ 빈도, LC-MS/MS K228 아세틸화, FP Kd(31 vs 71 µM), Nr4a1 qPCR, TCR-β 다양성·clonality, 종양 부피, ALT/AST, 간 괴사 면적","SW 모듈명 명시 O: TomoAnalysis (Tomocube v.1.5) — ‘The refractive index distribution was reconstructed and visualized ... using TomoAnalysis software’
+3D RI 재구성·시각화 및 Fluo-4 형광 강도 궤적 산출. 자사 소모품 TomoDish·TomoChamber(CO₂ 5%, 37 °C) 사용. 이후 분석을 넘긴 타사 SW 없음","FlowJo v10.0 → 유세포 분석
+ImageJ → 공초점 핵 내 NFATc2/AP-1 MFI, Pearson 공위치
+GraphPad Prism v8.0 / v7.01 → FP Kd 비선형 피팅·통계
+AlphaFold3 → LCK SH3–링커 구조 도킹 예측 [ML]
+ImageScope → 간 조직 손상 면적
+ImmunoSEQ Analyzer → TCR clonality
+Proteome Discoverer·Skyline → LC-MS/MS 정량"
+"paper_05","확인 불가(권호·온라인 게재일 미확인 — DOI상 2025 등록)","Cell Reports Medicine / 10.1016/j.xcrm.2025.102478 — 권(호) 확인 불가. 프리프린트: bioRxiv 10.1101/2024.04.04.587899(제목 일부 상이)","암/종양학 (TNBC의 EV 매개 미토콘드리아 제거와 eliglustat 재창출)","MDA-MB-231 TNBC 세포주 생세포(DMSO 대조 vs eliglustat 64 µM), 24 h 연속
+제외(QPI 미관찰): MDA-MB-468·유방암 세포주 29종 패널(면역블롯), 마우스 BRCA1co/co;MMTV-Cre;p53+/− TNBC 세포(공초점·Seahorse), 분리 EV·미토콘드리아(프로테오믹스·지질체), 마우스 종양(EM·IHC), 환자 혈장(지질체)","미토파지; 세포외소포 매개 미토콘드리아 제거; 스핑고지질 대사; 세포 사멸
+핵심 발견: TNBC는 세포외 스핑고미엘린을 회수해 글리코스핑고지질 EV를 만들고, 이를 통해 손상 미토콘드리아를 배출함. UGCG 억제제 eliglustat은 미토콘드리아에 세라마이드를 축적시켜 미토파지·내재적 아폽토시스를 유도하고 종양 성장을 억제함","#단일소기관 #연속관찰
+eliglustat 처리 후 자가포식소체 유사 구조의 시간 의존 축적과 공포화를 20분 간격 24 h로 관찰 ('time-dependent accumulation of autophagosome-like features'). 라벨프리 언급은 없음. 기존 기술 한계 극복을 직접 언급한 문장은 없음","[병행] Nikon A1 공초점(60×, 1.4 NA) → Mito-RFP·Lyso-GFP·Rab7a·TOM20·세라마이드 공위치
+[병행] Zeiss Observer Z1 광시야 형광 → 보조 형광 영상
+[병행] JEOL JEM 1010 TEM → 미토콘드리아 면적·원형도·폭, 자가포식소체 면적
+[병행] Agilent Seahorse XFe24 → 기저·ATP 연계·최대 호흡
+[병행] Tokai Hit 스테이지 인큐베이터(STXG) → HT 촬영 중 환경 유지
+[대체] 명시 안 됨","Tomocube HT-X1 [영상]: 2D RI 토모그램 타임랩스(20분 간격, 24 h; Fig. 5D, Video S1·S2) — 자가포식소체 유사 구조·공포화의 정성적 기록
+Tomocube HT-X1 [수치]: 없음
+기타: 면역블롯 densitometry(MFN2·p-DRP1 S616·LC3B-II·PINK1·PARKIN), MTS 생존율, EV 수준 AUC, EV 프로테오믹스(3,175 단백질), 지질체, EM 미토콘드리아 면적·원형도, OCR, 카스파제 9·3/7, 종양 부피·생존, 혈장 카디오리핀","SW 모듈명 명시 O: TomoStudio X (Tomocube Inc., 버전 명시 X) — ‘digitally controlled and monitored by an operating software TomoStudio X’
+현미경 동작 제어·모니터링만 기재. HT 영상의 분석 SW와 정량은 명시 안 됨","NIS-Elements → 공초점 수집·디컨볼루션(20회)
+Slidebook 6.0 (3i) → 광시야 형광 수집
+QuPath → DAPI 핵 계수(OCR 정규화)
+Progenesis QI → 지질체 LC-MS 처리
+Peaks Studio 12.0 → EV 프로테오믹스 검색
+Ingenuity Pathway Analysis → 경로 농축
+Aperio ImageScope → IHC 분석
+GraphPad Prism 8 → 그림·통계
+(EM 미토콘드리아 정량 SW: 명시 안 됨)"
+"paper_06","2026 (온라인 게재일 확인 불가)","Advanced Science / 10.1002/advs.202513424 — 13(3), 페이지(article number) 확인 불가. 프리프린트: bioRxiv 10.1101/2024.11.14.623676(원제는 ‘...revealed by optical diffraction tomography’)","신경생물학 (무질서 유리 나노와이어 기판이 유도하는 생체 유사 성상교세포 형태와 LC-HT 정량)","생후 2일 Sprague-Dawley 랫드 대뇌피질 1차 성상교세포, 유리 나노와이어 기판 vs PDL 코팅 평면 유리, 7일 배양 후 PFA 고정
+제외(QPI 미관찰): 나노와이어 기판 자체(SEM·UV-vis·AFM·Brillouin)","성상교세포 형태 성숙; 돌기 분지; 기질 지형 감지; 세포 내 조성 변화
+핵심 발견: 나노와이어 기판에서 성상교세포는 1차 돌기 최대 6개, 67%가 고성숙 형태, 48%가 2차 분지를 보임. 투영 면적은 작고(≈770 vs 13,800 µm²) 평균 RI는 높음(≈1.34 vs 1.335). Brillouin상 기판 강성의 공간 불균일성이 큼","#단일세포 #형태측정 #라벨프리 #저광독성 #동시측정 #형광결합 #굴절률
+세포별(n=96, 77/87) 형태 지표와 평균 RI를 같은 토모그램에서 산출하고 GFAP 형광과 상관함 ('Unlike traditional fluorescence microscopy, ODT ... avoiding issues such as phototoxicity'). 기존 기술 한계 극복 직접 언급: 'overcomes longstanding barriers to imaging on nanostructured materials'","[병행] 공초점 Brillouin 현미경(Nikon Eclipse Ti2, LightMachinery VIPA 분광기, Cobolt 660 nm) → 기판 국소 강성 맵
+[병행] ZEISS SIGMA 300 FESEM → 나노와이어 길이·직경
+[병행] Bruker Multimode 8 AFM → 기판 높이·탄성률
+[병행] Lambda 35 UV-vis 분광광도계 → 투과·반사율
+[대체] 기존 간섭성 레이저 기반 ODT(저자들의 선행 연구 [23]) → 저간섭 HT(HT-X1)로 전환. 배경 보정 불가·위상 펼침 오류 때문(‘traditional ODT systems ... require background calibration’)","Tomocube HT-X1 [수치]: 성숙 단계 비율(중간 33%/고성숙 67%), 1차 돌기 수(3개 46%·4개 32%·5개 14%·6개 8%), 2차 48%·3차 9% 분지, 1차 돌기 길이(주로 0–40 µm), 세포체 면적(주로 200–250 µm²), 총 arbor 길이(100–200 µm), 교차점 수·핵까지 거리, 투영 면적(≈770 vs 13,800 µm²), 평균 RI(≈1.34 vs ≈1.335), RI 픽셀 분포(n=9)
+Tomocube HT-X1 [영상]: 3D RI 토모그램(측면 155.4 nm·축 0.947 µm), MIP, GFAP/Hoechst 2D 상관 형광
+기타: 나노와이어 길이(1–3 µm)·직경(80–180 nm), 흡광도 A(λ), AFM 높이·탄성률, Brillouin 이동(26.15 vs 25.80 GHz), 효과크기 r","SW 모듈명 명시 O: TomoStudio X (취득 제어), TomoAnalysis (버전 명시 X) — ‘The process lengths and soma area were calculated using the TomoAnalysis software’
+돌기 길이·세포체 면적은 TomoAnalysis로 산출. 세포 분할은 ImageJ에서 2D MIP 기반 수동 수행(본문 명시). 핵 타원 피팅·교차점 거리, 마스크 픽셀 기반 면적, 평균 RI 산출 SW는 명시 안 됨. 통계는 MATLAB","ImageJ → LC-HT 2D MIP 기반 세포 수동 분할(일관 기준)
+ImageJ → SEM 나노와이어 길이·직경 측정(≈500회)
+MATLAB → Wilcoxon 순위합, rank biserial 효과크기, rmoutliers 이상치 제거, 바이올린 플롯
+scikit-image(Python) → AFM 탄성률 맵 block_reduce 다운샘플링
+※ 유출: QPI 세포 분할(수동)은 ImageJ, 통계·이상치 처리·시각화는 MATLAB. 자사 SW는 취득과 길이·면적 측정까지 관여"

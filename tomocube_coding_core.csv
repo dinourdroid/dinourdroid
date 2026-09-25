@@ -1,0 +1,58 @@
+﻿"논문ID","발행연도","저널명/DOI","① [대분류] 연구분야","② [타깃] 관찰 시료·물질","③ [기전] 관찰 현상·메커니즘","④ [장비가치] 측정 니즈","⑤ [관계장비] 병행/대체 광학 장비","⑥ [산출물] 데이터 최종 산출물","⑦ 자사(Tomocube) AI/SW 활용","⑧ 타사 AI/SW 활용"
+"paper_01","2026","ACS Nano / 확인 불가(DOI 미확인)","나노소재/약물전달","폐암 세포주(나노소재 처리)","나노입자 세포 내 섭취; 세포 내 산화적 분해; 엔도리소좀 수송; 지질방울 상호작용","#단일소기관 #연속관찰 #라벨프리","[병행] CytoViva 암시야 초분광 → 세포 내 스펙트럼 분포
+[병행] Talos F200X TEM → 세포 내 초미세구조
+[병행] 명시 안 됨(모델 미기재) 명시야·DCF 형광 → 생존·ROS","Tomocube HT-X1 [영상]: 3D RI 맵, MIP, 시간경과 RI 영상
+Tomocube HT-X1 [수치]: 없음(정성)
+기타: ICP-MS/OES 붕소 농도, DCF 형광, HSI 스펙트럼, ITC Kd, 분해 속도상수, TEM 격자","SW 모듈명 명시 O: TomoStudio X (버전 명시 X)
+촬영 제어; RI 재구성·all-in-focus 투영 수행 SW는 불분명","ImageJ → TEM 영상 분석
+ENVI → 초분광 처리
+CasaXPS·Velox·Nanoscope → 소재 분석
+GROMACS·PACKMOL → MD 시뮬레이션
+(QPI 데이터 처리 타사 SW: 명시 안 됨)"
+"paper_02","2026","Cells / 10.3390/cells15080717","재생의학","내피세포(HUVEC)+형광표지 세포외소포","세포외소포 내재화; 내피세포 아폽토시스; 혈관신생","#단일세포 #연속관찰 #형광결합","[병행] Sartorius IncuCyte S3 → 혈관신생·아폽토시스 타임랩스
+[병행] Malvern NanoSight NS300 → EV 크기·농도
+[병행] MACSQuant16 유세포분석기 → EV 표면마커
+[병행] JEOL 1400 TEM → EV 형태","Tomocube HT-X1 [영상]: 3D RI+형광 타임랩스, 3D MPR 동영상
+Tomocube HT-X1 [수치]: 없음(정성)
+기타: VEGF mRNA·단백질, 혈관 네트워크 길이, 아폽토시스 세포 수, NTA, 표면마커","SW 모듈명 명시 O: TA viewer (v2.1.5)
+EV 내재화 시각적 평가","IncuCyte SW v2024B → 혈관신생 자동 분석
+IncuCyte basic analyzer → 아폽토시스 세포 계수
+NTA 3.4 → 입자 분석
+MACSQuant SW → 유세포
+GraphPad Prism·Excel → 통계"
+"paper_03","2026","PNAS Nexus / 10.1093/pnasnexus/pgag089","세포생물학/생물물리","노화 모델 마우스 폐 섬유아세포","세포 노화; 세포질 분자 밀집; 세포질 강성; 세포 이동","#단일세포 #건조질량 #광학부피 #질량밀도 #라벨프리 #동시측정 #굴절률","[병행] 공초점 현미경 → 형태·이동·비드 추적
+[병행] 광학핀셋 → 세포질 전단탄성률","Tomocube HT-2H [수치]: RI, 건조질량밀도, 건조질량, 세포 부피
+Tomocube HT-2H [영상]: RI 단면·3D 재구성
+기타: 퍼짐면적, 종횡비, 이동속도·MSD, 힘 스펙트럼, 전단탄성률","SW 모듈명 명시 X — 장비명만 기재
+RI 임계값 분할·세포질 ROI 정량(수행 SW 불분명)","ImageJ → 공초점 면적·종횡비
+TrackMate → 세포·비드 궤적 추적"
+"paper_04","2026","Nature Immunology / 10.1038/s41590-025-02377-3","면역학","T세포+항원제시 B세포 공배양","T세포 수용체 신호전달; 칼슘 동원; 단백질 아세틸화; 항종양 면역","#세포간상호작용 #연속관찰 #형광결합","[병행] BD FACSymphony A5·LSR II·Cytek → 유세포(Ca 플럭스·인산화)
+[병행] Zeiss LSM 공초점 → NFATc2/AP-1 핵 전위","Tomocube HT-2 [영상]: 3D RI+형광 타임랩스
+Tomocube HT-2 [수치]: Fluo-4 형광 강도 궤적
+기타: Ca 플럭스, 웨스턴블롯, 유세포 빈도, LC-MS/MS 아세틸화, Kd, qPCR, TCR-seq, 종양 부피","SW 모듈명 명시 O: TomoAnalysis (v1.5)
+RI 3D 재구성·시각화, 형광 강도 궤적 산출","FlowJo → 유세포
+ImageJ → 공초점 형광 정량·공위치
+GraphPad Prism → Kd·통계
+AlphaFold3 → 구조 도킹 [ML]
+ImageScope → 간 손상 면적"
+"paper_05","확인 불가(권호 미확인)","Cell Reports Medicine / 10.1016/j.xcrm.2025.102478","암/종양학","삼중음성 유방암 세포주","미토파지; 세포외소포 매개 미토콘드리아 제거; 스핑고지질 대사; 세포 사멸","#단일소기관 #연속관찰","[병행] Nikon A1 공초점 → 미토콘드리아·리소좀·세라마이드
+[병행] Zeiss Observer Z1 → 광시야 형광
+[병행] JEOL JEM 1010 TEM → 미토콘드리아 형태 정량
+[병행] Agilent Seahorse XFe24 → 산소소비율","Tomocube HT-X1 [영상]: 2D RI 타임랩스·동영상
+Tomocube HT-X1 [수치]: 없음(정성)
+기타: 면역블롯, 생존율, 프로테오믹스, 지질체, EM 미토콘드리아 면적, OCR, 카스파제 활성, 종양 성장","SW 모듈명 명시 O: TomoStudio X (버전 명시 X)
+촬영 제어","NIS-Elements → 공초점 수집·디컨볼루션
+Slidebook 6.0 → 광시야 형광
+QuPath → 핵 계수
+Progenesis QI·Peaks Studio → 오믹스
+Aperio ImageScope → IHC
+GraphPad Prism → 통계"
+"paper_06","2026","Advanced Science / 10.1002/advs.202513424","신경생물학","1차 배양 랫드 성상교세포(나노와이어 기판)","성상교세포 형태 성숙; 돌기 분지; 기질 지형 감지; 세포 내 조성 변화","#단일세포 #형태측정 #라벨프리 #저광독성 #동시측정 #형광결합 #굴절률","[병행] Brillouin 공초점 현미경 → 기판 강성
+[병행] ZEISS SIGMA 300 FESEM → 나노와이어 형태
+[대체] 기존 레이저 ODT → LC-HT","Tomocube HT-X1 [수치]: 돌기 수·길이, 세포체 면적, 총 arbor 길이, 교차점, 투영 면적, 평균 RI·RI 분포
+Tomocube HT-X1 [영상]: 3D RI 맵, MIP, 상관 형광
+기타: 나노와이어 길이·직경, 흡광도, AFM 탄성률, Brillouin 이동","SW 모듈명 명시 O: TomoStudio X, TomoAnalysis (버전 명시 X)
+촬영 제어; 돌기 길이·세포체 면적 산출","ImageJ → MIP 수동 세포 분할, SEM 측정
+MATLAB → 통계·이상치 제거
+scikit-image → AFM 다운샘플링
+※ 유출: QPI 세포 분할은 ImageJ, 통계는 MATLAB"
