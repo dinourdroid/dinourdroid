@@ -1,0 +1,151 @@
+{
+ "n_posts": 11558,
+ "months": [
+  "2023-11",
+  "2023-12",
+  "2024-01",
+  "2024-02",
+  "2024-03",
+  "2024-04",
+  "2024-05",
+  "2024-06",
+  "2024-07",
+  "2024-08",
+  "2024-09",
+  "2024-10",
+  "2024-11",
+  "2024-12",
+  "2025-01",
+  "2025-02",
+  "2025-03",
+  "2025-04",
+  "2025-05",
+  "2025-06",
+  "2025-07",
+  "2025-08",
+  "2025-09",
+  "2025-10",
+  "2025-11",
+  "2025-12",
+  "2026-01",
+  "2026-02",
+  "2026-03",
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07",
+  "2026-08",
+  "2026-09",
+  "2026-10"
+ ],
+ "by_year": {
+  "2023": {
+   "posts": 674,
+   "ca": 154,
+   "lang_req": 7,
+   "bilingual_word": 2,
+   "lang_or_bil": 9,
+   "ca_lang_or_bil": 0,
+   "korea": 4,
+   "japan": 4,
+   "apac": 2,
+   "localization": 2,
+   "visa_yes": 16,
+   "remote": 414
+  },
+  "2024": {
+   "posts": 3920,
+   "ca": 833,
+   "lang_req": 29,
+   "bilingual_word": 1,
+   "lang_or_bil": 30,
+   "ca_lang_or_bil": 0,
+   "korea": 11,
+   "japan": 19,
+   "apac": 1,
+   "localization": 11,
+   "visa_yes": 105,
+   "remote": 2239
+  },
+  "2025": {
+   "posts": 4032,
+   "ca": 916,
+   "lang_req": 21,
+   "bilingual_word": 4,
+   "lang_or_bil": 25,
+   "ca_lang_or_bil": 4,
+   "korea": 1,
+   "japan": 14,
+   "apac": 10,
+   "localization": 7,
+   "visa_yes": 94,
+   "remote": 2122
+  },
+  "2026": {
+   "posts": 2932,
+   "ca": 633,
+   "lang_req": 27,
+   "bilingual_word": 2,
+   "lang_or_bil": 29,
+   "ca_lang_or_bil": 2,
+   "korea": 3,
+   "japan": 16,
+   "apac": 21,
+   "localization": 7,
+   "visa_yes": 93,
+   "remote": 1447
+  }
+ },
+ "lang_req_counts": [
+  [
+   "German",
+   36
+  ],
+  [
+   "French",
+   14
+  ],
+  [
+   "Spanish",
+   11
+  ],
+  [
+   "Dutch",
+   9
+  ],
+  [
+   "Japanese",
+   5
+  ],
+  [
+   "Polish",
+   4
+  ],
+  [
+   "Chinese",
+   3
+  ],
+  [
+   "Hindi",
+   2
+  ],
+  [
+   "Korean",
+   1
+  ],
+  [
+   "Italian",
+   1
+  ]
+ ],
+ "lang_req_counts_ca": [
+  [
+   "Hindi",
+   2
+  ],
+  [
+   "Spanish",
+   2
+  ]
+ ]
+}
